@@ -29,3 +29,7 @@ python scripts/ask_rag.py
 ## Azure DevOps
 
 Use `.azure-pipelines/azure-pipelines.yml` to automate the whole process.
+
+## Techmakers
+
+This article is brought by the resources of www.techmakers.co 
