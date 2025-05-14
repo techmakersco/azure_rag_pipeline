@@ -1,0 +1,33 @@
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  AZURE_SUBSCRIPTION: '<your-service-connection>'
+  PYTHON_VERSION: '3.10'
+
+jobs:
+- job: DeployAndQuery
+  steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(PYTHON_VERSION)'
+
+  - script: |
+      python -m pip install --upgrade pip
+      pip install openai azure-search-documents langchain
+    displayName: 'Install Python Dependencies'
+
+  - script: |
+      python scripts/create_index.py
+    displayName: 'Create Azure AI Search Index'
+
+  - script: |
+      python scripts/upload_documents.py
+    displayName: 'Upload Documents to Index'
+
+  - script: |
+      python scripts/ask_rag.py
+    displayName: 'Run RAG Query'

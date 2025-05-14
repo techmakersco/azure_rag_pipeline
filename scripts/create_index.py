@@ -1,0 +1,1 @@
+# Python code to create Azure AI Search index (fill with your details)
