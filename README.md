@@ -1,5 +1,8 @@
 # Azure RAG Pipeline (Terraform + Azure AI Search + OpenAI)
 
+This is the github repo of the article at https://www.linkedin.com/pulse/build-rag-pipeline-using-azure-ai-search-openai-terraform-3amqe/
+
+
 This project demonstrates a Retrieval-Augmented Generation pipeline using Azure AI Search and Azure OpenAI. All resources are provisioned using Terraform.
 
 ## Steps
